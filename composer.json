@@ -1,4 +1,23 @@
 {
+    "name": "summercms/wn-kefu-plugin",
+    "vendor": "summer",
+    "type": "winter-plugin",
+    "description": "Winter CMS kefu plugin",
+    "keywords": ["winter", "cms", "kefu", "plugin"],
+    "license": "MIT",
+    "homepage": "https://github.com/followzero/wn-kefu-plugin",
+    "authors": [
+        {
+            "name": "Summer CMS",
+            "email": "oct38577145@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "summercms/wn-kefu-plugin":"plugins/summer/kefu"
+        }
+    },
     "require": {
         "workerman/phpsocket.io": "^2.0"
     }
