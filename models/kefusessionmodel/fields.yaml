@@ -1,0 +1,19 @@
+fields:
+    god:
+        label: 顾客
+        nameFrom: nickname
+        descriptionFrom: nickname
+        prompt: 单击“查找”按钮查找顾客
+        list: ~/plugins/summer/kefu/models/kefugodmodel/columns.yaml
+        span: auto
+        readOnly: 1
+        type: recordfinder
+    csr:
+        label: 客服
+        nameFrom: nickname
+        descriptionFrom: nickname
+        prompt: 单击“查找”按钮查找客服
+        list: ~/plugins/summer/kefu/models/kefucsrmodel/columns.yaml
+        span: auto
+        readOnly: 1
+        type: recordfinder

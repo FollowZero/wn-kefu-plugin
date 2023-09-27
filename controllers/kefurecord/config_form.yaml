@@ -1,0 +1,11 @@
+name: KefuRecord
+modelClass: Summer\Kefu\Models\KefuRecordModel
+form: $/summer/kefu/models/kefurecordmodel/fields.yaml
+defaultRedirect: summer/kefu/kefurecord
+create:
+    redirect: 'summer/kefu/kefurecord/update/:id'
+    redirectClose: summer/kefu/kefurecord
+update:
+    redirect: summer/kefu/kefurecord
+    redirectClose: summer/kefu/kefurecord
+preview: {  }

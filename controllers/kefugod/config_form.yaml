@@ -1,0 +1,10 @@
+name: KefuGod
+form: $/summer/kefu/models/kefugodmodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuGodModel
+defaultRedirect: summer/kefu/kefugod
+create:
+    redirect: 'summer/kefu/kefugod/update/:id'
+    redirectClose: summer/kefu/kefugod
+update:
+    redirect: summer/kefu/kefugod
+    redirectClose: summer/kefu/kefugod

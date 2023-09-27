@@ -1,0 +1,47 @@
+plugin:
+    name: 'summer.kefu::lang.plugin.name'
+    description: 'summer.kefu::lang.plugin.description'
+    author: summer
+    icon: wn-icon-comments-o
+navigation:
+    main-menu-item-kefu:
+        label: 客服管理
+        url: summer/kefu/welcome
+        icon: wn-icon-comments-o
+        sideMenu:
+            side-menu-item-welcome:
+                label: 客服管理
+                url: summer/kefu/welcome
+                icon: wn-icon-comments-o
+            side-menu-item-settings:
+                label: 客服设置
+                url: system/settings/update/summer/kefu/settings
+                icon: icon-gear
+            side-menu-item-god:
+                label: 顾客管理
+                url: summer/kefu/kefugod
+                icon: icon-user
+            side-menu-item-session:
+                label: 会话管理
+                url: summer/kefu/kefusession
+                icon: icon-stack-exchange
+            side-menu-item-kbs:
+                label: 知识库管理
+                url: summer/kefu/kefukbs
+                icon: icon-book
+            side-menu-item-csr:
+                label: 客服代表管理
+                url: summer/kefu/kefucsr
+                icon: icon-user-secret
+            side-menu-item-leavemessage:
+                label: 用户留言管理
+                url: summer/kefu/kefuleavemessage
+                icon: icon-envelope
+            side-menu-item-record:
+                label: 聊天记录总汇
+                url: summer/kefu/kefurecord
+                icon: icon-reorder
+            side-menu-item-fast_reply:
+                label: 快捷回复管理
+                url: summer/kefu/kefufastreply
+                icon: icon-space-shuttle

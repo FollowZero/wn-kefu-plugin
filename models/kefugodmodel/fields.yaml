@@ -1,0 +1,28 @@
+fields:
+    target:
+        label: 绑定用户
+        nameFrom: username
+        descriptionFrom: username
+        list: ~/plugins/winter/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: 查找记录
+        prompt: 单击“查找”按钮查找用户
+        keyFrom: id
+        span: auto
+        type: recordfinder
+    nickname:
+        label: 昵称
+        span: auto
+        type: text
+    referrer:
+        label: 来路
+        span: auto
+        type: text
+    contact:
+        label: 联系方式
+        span: auto
+        type: text
+    note:
+        label: 备注
+        span: auto
+        type: text

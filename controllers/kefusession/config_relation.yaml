@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+records:
+    label: 聊天记录
+    manage:
+        list: $/summer/kefu/models/kefurecordmodel/columns.yaml
+        form: $/summer/kefu/models/kefurecordmodel/fields.yaml
+    view:
+        list: $/summer/kefu/models/kefurecordmodel/columns.yaml
+        recordUrl: summer/kefu/kefurecord/update/:id
+        toolbarButtons: delete
+        recordsPerPage: 15

@@ -1,0 +1,10 @@
+name: KefuSession
+form: $/summer/kefu/models/kefusessionmodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuSessionModel
+defaultRedirect: summer/kefu/kefusession
+create:
+    redirect: 'summer/kefu/kefusession/update/:id'
+    redirectClose: summer/kefu/kefusession
+update:
+    redirect: summer/kefu/kefusession
+    redirectClose: summer/kefu/kefusession

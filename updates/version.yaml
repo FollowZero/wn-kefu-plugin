@@ -1,0 +1,32 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - '创建客服游客表-别问，问就是:顾客就是上帝'
+    - builder_table_create_summer_kefu_god.php
+1.0.3:
+    - 创建客服代表表
+    - builder_table_create_summer_kefu_csr.php
+1.0.4:
+    - 创建客服会话表
+    - builder_table_create_summer_kefu_session.php
+1.0.5:
+    - 创建聊天记录表
+    - builder_table_create_summer_kefu_record.php
+1.0.6:
+    - 创建客服顾客轨迹表
+    - builder_table_create_summer_kefu_trajectory.php
+1.0.7:
+    - 创建顾客留言表
+    - builder_table_create_summer_kefu_leave_message.php
+1.0.8:
+    - 创建快捷回复表
+    - builder_table_create_summer_kefu_fast_reply.php
+1.0.9:
+    - 创建接待记录表
+    - builder_table_create_summer_kefu_reception_log.php
+1.0.10:
+    - 创建知识库表
+    - builder_table_create_summer_kefu_kbs.php
+1.0.11:
+    - 创建知识库制定客服关系表
+    - builder_table_create_summer_kefu_kbs_csr.php

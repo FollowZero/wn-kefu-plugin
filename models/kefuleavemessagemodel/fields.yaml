@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 姓名
+        span: auto
+        type: text
+    contact:
+        label: 联系方式
+        span: auto
+        type: text
+    message:
+        label: 留言内容
+        size: small
+        span: full
+        type: textarea

@@ -1,0 +1,10 @@
+name: KefuFastReply
+form: $/summer/kefu/models/kefufastreplymodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuFastReplyModel
+defaultRedirect: summer/kefu/kefufastreply
+create:
+    redirect: 'summer/kefu/kefufastreply/update/:id'
+    redirectClose: summer/kefu/kefufastreply
+update:
+    redirect: summer/kefu/kefufastreply
+    redirectClose: summer/kefu/kefufastreply

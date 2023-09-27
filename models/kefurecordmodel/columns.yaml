@@ -1,0 +1,38 @@
+columns:
+    id:
+        label: ID
+        type: text
+    session_id:
+        label: 会话ID
+        type: text
+    sender_identity:
+        label: 发送人身份
+        type: partial
+        sortable: true
+        path: ~/plugins/summer/kefu/models/comments/_sender_identity.htm
+    god:
+        label: 顾客
+        type: text
+        select: nickname
+        relation: god
+        sortable: false
+    csr:
+        label: 客服
+        type: partial
+        path: ~/plugins/summer/kefu/models/comments/_record_csr.htm
+        sortable: false
+    message_type:
+        label: 消息类型
+        type: partial
+        path: ~/plugins/summer/kefu/models/comments/_message_type.htm
+    message:
+        label: 消息
+        type: text
+        sortable: false
+    status:
+        label: 状态
+        type: partial
+        path: ~/plugins/summer/kefu/models/comments/_record_status.htm
+    created_at:
+        label: 创建时间
+        type: datetime

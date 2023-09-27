@@ -1,0 +1,377 @@
+<!-- KeFu-Admin-Template -->
+<ins class="KeFu">
+
+    <!-- 右侧悬浮按钮 -->
+    <img src="/plugins/summer/kefu/assets/img/buoy1.png" class="kefu_button" id="kefu_button" data-html="true" data-container="body" data-toggle="popover" data-placement="left" data-content="" alt="客服浮标" />
+    <!-- 右侧悬浮按钮-end -->
+
+    <!-- 聊天窗口 -->
+
+    <div class="modal fade bs-example-modal-lg" id="KeFuModal" tabindex="-1" role="dialog" aria-labelledby="KeFuModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <span id="modal-title">在线客服</span>
+
+                        <div class="" id="kefu_csr_status">
+                            <select name="kefu_csr_select" id="kefu_csr_select">
+                                <option value="3" data-status="3" >在线</option>
+                                <option value="2" data-status="2" >离开</option>
+                                <option value="1" data-status="1" >繁忙</option>
+                            </select>
+                        </div>
+
+                        <span id="kefu_error">链接中...</span>
+                    </h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="kefu-left">
+                        <div class="top">
+                            <input type="text" autocomplete="off" id="kefu_search_input" placeholder="搜索其实很简单"/>
+                        </div>
+
+                        <div id="session_list_search" class="search_users">
+
+                        </div>
+
+                        <div class="panel-group" id="session_panel" role="tablist" aria-multiselectable="false">
+
+                            <!-- data-parent="#session_panel" 若需自动折叠，可在a标签上添加此属性 -->
+                            <div class="panel panel-info dialogue_panel">
+                                <div class="panel-heading" role="tab" id="heading_dialogue">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" href="#collapse_dialogue"
+                                           aria-expanded="false" aria-controls="collapse_dialogue">对话中<span
+                                            class="red_dot text-danger">•</span></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse_dialogue" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="heading_dialogue">
+                                    <div class="panel-body">
+                                        <ul id="session_list_dialogue" class="people">
+                                            <div class="none_session">这里没有会话哦~</div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-info invitation_panel">
+                                <div class="panel-heading" role="tab" id="heading_invitation">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" href="#collapse_invitation"
+                                           aria-expanded="false" aria-controls="collapse_invitation">可邀请<span
+                                            class="red_dot text-danger">•</span></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse_invitation" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="heading_invitation">
+                                    <div class="panel-body">
+                                        <ul id="session_list_invitation" class="people">
+                                            <div class="none_session">这里没有会话哦~</div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-info recently_panel">
+                                <div class="panel-heading" role="tab" id="heading_recently">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" href="#collapse_recently"
+                                           aria-expanded="false" aria-controls="collapse_recently">最近沟通<span
+                                            class="red_dot text-danger">•</span></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse_recently" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="heading_recently">
+                                    <div class="panel-body">
+                                        <ul id="session_list_recently" class="people">
+                                            <div class="none_session">这里没有会话哦~</div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="kefu-right">
+                        <div class="top">
+						<span>
+							<span id="session_user_name" class="name">无会话</span>
+<!--							<span class="top_span" id="kefu_blacklist">拉黑名单</span>-->
+							<span class="top_span" id="kefu_view_trajectory">查看轨迹</span>
+							<span class="top_span" id="kefu_view_user_card">用户名片</span>
+						</span>
+                        </div>
+                        <div class="chat">
+                            <div class="chat_scroll kefu_window_view" id="kefu_scroll">
+
+                            </div>
+                            <div class="VivaTimeline kefu_window_view" id="kefu_trajectory">
+                                <dl id="kefu_trajectory_log"></dl>
+                            </div>
+                            <div class="panel panel-success kefu_window_view" id="kefu_user_card">
+                                <div class="panel-heading">用户名片</div>
+                                <div class="panel-body">
+                                    <form method="get" action="" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">用户</label>
+                                            <div class="col-sm-7">
+                                                <input id="card-user" type="text" readonly="readonly"
+                                                       class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-nickname" class="col-sm-3 control-label">用户昵称</label>
+                                            <div class="col-sm-7">
+                                                <input id="card-nickname" name="nickname" type="text"
+                                                       placeholder="请输入用户昵称" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-referrer" class="col-sm-3 control-label">用户来路</label>
+                                            <div class="col-sm-7">
+                                                <textarea id="card-referrer" name="referrer" rows="2"
+                                                          class="form-control" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-contact" class="col-sm-3 control-label">联系方式</label>
+                                            <div class="col-sm-7">
+                                                <textarea id="card-contact" name="contact" rows="2" class="form-control"
+                                                          placeholder="QQ/微信/手机号等"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-note" class="col-sm-3 control-label">备注</label>
+                                            <div class="col-sm-7">
+                                                <textarea id="card-note" name="note" rows="4" class="form-control"
+                                                          placeholder="请输入备注,备注信息用户不可见"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-7">
+                                                <button id="card-button" type="button" class="btn btn-success">确认修改
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 按需渲染表情包 -->
+                        <div class="kefu_emoji">
+                            <div id="kefu_emoji">
+                                <?php for($i = 1; $i <= 36; $i++): ?>
+                                <img class="emoji" title="" src="/plugins/summer/kefu/assets/img/emoji/<?= $i ?>.png">
+                                <?php endfor ?>
+                            </div>
+                        </div>
+
+                        <!-- 按需渲染自动回复 -->
+                        <div class="kefu_fast_reply_list">
+                            <table class="table table-striped table-hover" id="kefu_fast_reply_list">
+                                <?php foreach ($fast_replies as $fast_reply): ?>
+                                <tr data-id="<?= $fast_reply->id ?>">
+                                    <td><?= $fast_reply->title ?></td>
+                                </tr>
+                                <?php endforeach ?>
+                            </table>
+                        </div>
+
+                        <!--  准备链接输入面板  -->
+                        <div class="kefu_link_form">
+                            <div id="kefu_link_form">
+                                <div class="input-group">
+                                    <span class="input-group-addon">链接说明</span>
+                                    <input type="text" placeholder="选填" class="form-control" id="kefu_link_form_ins"/>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">链接地址</span>
+                                    <input type="text" value="http://" class="form-control" id="kefu_link_form_url"/>
+                                </div>
+                                <div class="link_form_buttons">
+                                    <button type="button" class="btn btn-success btn-sm">确认</button>
+                                    <button type="button" class="btn btn-default btn-sm">取消</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--用户输入状态-->
+                        <div class="input_status">
+                            <div id="kefu_input_status"></div>
+                        </div>
+
+                        <div class="write">
+                            <div class="write_top">
+                                <i class="toolbar_icon smiley" title="发送表情" style="background: url('/plugins/summer/kefu/assets/img/expression.png') no-repeat center;background-size: 80% 80%;"></i>
+
+                                <div class="select_file">
+                                    <input title="发送文件" id="chatfile" size="1" width="20" type="file" name="chatfile">
+                                    <i class="attach toolbar_icon" style="background: url('/plugins/summer/kefu/assets/img/attachment.png') no-repeat center;background-size: 80% 80%;"></i>
+                                </div>
+
+                                <i class="toolbar_icon link" title="发送链接" style="background: url('/plugins/summer/kefu/assets/img/link.png') no-repeat center;background-size: 80% 80%;"></i>
+
+                                <span title="按下Ctrl+Enter换行" class="write_top_span" id="send_tis">按下Enter发送消息</span>
+
+                                <span class="write_top_span kefu_fast_reply">快捷回复</span>
+                            </div>
+                            <pre contenteditable="plaintext-only" id="kefu_message"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  客服端右击用户菜单  -->
+    <ul class="dropdown-menu" style="z-index: 1060;" id="kefu_menu">
+        <li class="kefu_menu_item transfer" data-action="transfer"><a href="#">转接会话</a></li>
+        <li class="kefu_menu_item invitation" data-action="invitation"><a href="#">邀请对话</a></li>
+        <li class="kefu_menu_item" data-action="edit_nickname"><a href="#">修改昵称</a></li>
+        <li class="kefu_menu_item" data-action="del"><a href="#">删除会话</a></li>
+    </ul>
+
+    <!-- 聊天窗口-end -->
+</ins>
+<!-- KeFu-Template-end -->
+<script>
+    var settings = <?= $settings ?>;
+</script>
+<script type="text/javascript">
+    console.log(settings);
+    var data=null;
+    data={
+        "user_info": {
+            "id": 1,
+            "user_id": "1||user",
+            "avatar": "",
+            "nickname": "游客 1",
+            "referrer": " IP:125.46.214.113",
+            "contact": "",
+            "note": "",
+            "wechat_openid": "",
+            "createtime": 1690990257,
+            "fu_id": null,
+            "fu_avatar": null,
+            "fu_nickname": null,
+            "blacklist": null,
+            "trajectory": {
+                "csr_id": 1,
+                "note": ""
+            },
+            "source": "user"
+        },
+        "new_msg": null,
+        "config": {
+            "chat_name": "在线客服",
+            "ecs_exit": "1",
+            "send_message_key": "1",
+            "new_user_tip": "您准备好体验在线客服系统了吗？",
+            "new_user_msg": "这是一个欢迎新用户的消息,系统为用户成功分配客服后,自动以该客服身份发送此消息~单客服的欢迎消息请于：客服管理-》客服代表管理进行设置",
+            "announcement": "这是一条公告！你可以在后台管理->客服管理->会话窗口中进行更换公告内容！刀客源码网www.dkewl.com",
+            "slider_images": [
+                "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/slider1.jpg",
+                "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/slider2.jpg"
+            ],
+            "chat_introduces": "<p style=\"line-height: 1.6;\">\r\n  <b><span style=\"font-size: 16px;\">功能简介<\/span><\/b><br>\r\n<\/p>\r\n<p>\r\n <b>模块化开发<\/b><br>\r\n  强大的一键生成功能极速简化你的开发流程,加快你的项目开发\r\n<\/p>\r\n<p>\r\n <b>响应式布局<\/b><br>\r\n  自动适配,无需要担心兼容性问题\r\n<\/p>\r\n<p>\r\n  <b>完善的权限管理<\/b><br>\r\n  自由分配子级权限、一个管理员可同时属于多个组别\r\n<\/p>\r\n<p>\r\n  <b>通用的会员和API模块<\/b><br>\r\n  共用同一账号体系的Web端会员中心权限验证和API接口会员权限验证\r\n<\/p>\r\n<p>\r\n  <b>丰富的应用市场<\/b><br>\r\n  第三方云存储、云短信、富文本编辑器、CMS、博客、文档生成，一切均可在线安装卸载\r\n<\/p>\r\n<p><\/p>",
+            "auto_invitation_switch": 0,
+            "auto_invitation_timing": "7",
+            "invite_box_img": "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/invite_box_img.jpg",
+            "new_message_notice": "",
+            "only_first_invitation": "1",
+            "new_message_shake": "3",
+            "only_csr_online_invitation": "1",
+            "input_status_display": "2",
+            "uni_push_switch": "0",
+            "uni_push_appid": "",
+            "uni_push_appkey": "",
+            "uni_push_master_secret": "",
+            "package_name_android": "",
+            "__tips__": "1. <b><font color=\"red\">本窗口的所有配置项，非技术人员不建议进行调整<\/font><\/b><br>\n                      2. 若需开启wss协议，请先配置<b>ssl证书<\/b>、<b>ssl证书KEY<\/b>并重启Workerman服务，才会生效；https站点必须配置wss<br>\n                      3. 仅需对外开放<b>WebSocket端口<\/b>，另外的两项端口<b>未被占用<\/b>即可<br>\n                      4. 消息提醒铃声建议大小100kb，文件无法上传请参考插件文档<a target=\"_blank\" href=\"https:\/\/doc.fastadmin.net\/kefu\/38.html\">常见问题<\/a>",
+            "wss_switch": "0",
+            "websocket_port": "39818",
+            "ringing": "\/assets\/addons\/kefu\/audio\/message_prompt.wav",
+            "theme": "default",
+            "rule_out_url": "http:\/\/kefu_local.com\/index\/user\/index.html?tip=自动排除对应https地址、带参数地址，此处的URL带参数无效",
+            "__CDN__": "http:\/\/kefutp.summercms.com",
+            "upload": {
+                "cdnurl": "http:\/\/kefutp.summercms.com",
+                "uploadurl": "http:\/\/kefutp.summercms.com\/addons\/kefu\/index\/upload",
+                "bucket": "local",
+                "maxsize": "10mb",
+                "mimetype": "jpg,png,bmp,jpeg,gif,webp,zip,rar,wav,mp4,mp3,webm",
+                "chunking": false,
+                "chunksize": 2097152,
+                "savekey": "\/uploads\/{year}{mon}{day}\/{filemd5}{.suffix}",
+                "multipart": [],
+                "multiple": false,
+                "fullmode": false,
+                "thumbstyle": "",
+                "storage": "local"
+            },
+            "toolbar": {
+                "fastreply": {
+                    "id": 3,
+                    "position": "backend",
+                    "mark": "fastreply",
+                    "title": "快捷回复",
+                    "icon_image": "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/fastreply.png",
+                    "data_api": "",
+                    "card_url": "",
+                    "card_frontend_url": "",
+                    "status": 1,
+                    "deletetime": null
+                },
+                "link": {
+                    "id": 4,
+                    "position": "general",
+                    "mark": "link",
+                    "title": "发送链接",
+                    "icon_image": "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/link.png",
+                    "data_api": "",
+                    "card_url": "",
+                    "card_frontend_url": "",
+                    "status": 1,
+                    "deletetime": null
+                },
+                "file": {
+                    "id": 5,
+                    "position": "general",
+                    "mark": "file",
+                    "title": "发送文件",
+                    "icon_image": "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/attachment.png",
+                    "data_api": "",
+                    "card_url": "",
+                    "card_frontend_url": "",
+                    "status": 1,
+                    "deletetime": null
+                },
+                "expression": {
+                    "id": 6,
+                    "position": "general",
+                    "mark": "expression",
+                    "title": "发送表情",
+                    "icon_image": "http:\/\/kefutp.summercms.com\/assets\/addons\/kefu\/img\/smiley.png",
+                    "data_api": "",
+                    "card_url": "",
+                    "card_frontend_url": "",
+                    "status": 1,
+                    "deletetime": null
+                }
+            },
+            "is_shake": true,
+            "modulename": "admin"
+        },
+        "token_list": {
+            "kefu_tourists_token": "1|864000|1691854257|d67e2dc446251d70fae82d2167c6b38a"
+        }
+    }
+    KeFu.initialize(settings, 'admin');
+</script>

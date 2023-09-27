@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: ID
+        type: text
+    target:
+        label: 所属管理员
+        type: text
+        sortable: false
+        select: "concat(first_name, ' ', last_name)"
+        relation: target
+    title:
+        label: 标题
+        type: text
+        searchable: true
+        sortable: false
+    content:
+        label: 内容
+        type: text
+        sortable: false
+    status:
+        label: 状态
+        type: switch
+        sortable: false

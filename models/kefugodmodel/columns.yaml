@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: ID
+        type: text
+    target:
+        label: 绑定用户
+        type: text
+        sortable: false
+        select: username
+        relation: target
+    nickname:
+        label: 昵称
+        type: text
+        searchable: true
+        sortable: false
+    referrer:
+        label: 来路
+        type: text
+        sortable: false
+    contact:
+        label: 联系方式
+        type: text
+        sortable: false
+    note:
+        label: 客服备注
+        type: text
+        sortable: false
+    created_at:
+        label: 创建时间
+        type: datetime

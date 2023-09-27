@@ -1,0 +1,10 @@
+name: KefuKbs
+form: $/summer/kefu/models/kefukbsmodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuKbsModel
+defaultRedirect: summer/kefu/kefukbs
+create:
+    redirect: 'summer/kefu/kefukbs/update/:id'
+    redirectClose: summer/kefu/kefukbs
+update:
+    redirect: summer/kefu/kefukbs
+    redirectClose: summer/kefu/kefukbs

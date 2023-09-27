@@ -1,0 +1,22 @@
+fields:
+    target:
+        label: 所属管理员
+        type: relation
+        select: "concat(first_name, ' ', last_name)"
+        comment: 不选管理员则为通用快捷回复
+        emptyOption: 通用
+        span: full
+    title:
+        label: 标题
+        span: full
+        type: text
+    content:
+        label: 回复内容
+        size: tiny
+        span: full
+        type: textarea
+    status:
+        label: 状态
+        span: full
+        default: 1
+        type: switch

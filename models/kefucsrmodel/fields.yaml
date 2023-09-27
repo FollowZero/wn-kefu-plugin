@@ -1,0 +1,27 @@
+fields:
+    target:
+        label: 绑定管理员
+        type: relation
+        select: concat(first_name, ' ', last_name)
+        span: full
+    nickname:
+        label: 昵称
+        span: auto
+        type: text
+    ceiling:
+        label: 接待上限
+        span: auto
+        default: '1'
+        type: number
+        comment: '设置接待上限有助于自动分配客服,不会造成游客无人接待的情况,详见客服分配方式'
+    keep_alive:
+        label: 保持在线
+        span: auto
+        type: switch
+        comment: 开启时，客服代表将永久保持在线状态；关闭后，客服需完成一次上下线，状态才能显示正常
+    welcome_msg:
+        label: 欢迎消息
+        size: small
+        span: full
+        type: textarea
+        comment: 当前客服接待到用户时，自动发送给该用户的欢迎消息

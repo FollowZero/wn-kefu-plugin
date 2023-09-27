@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: ID
+        type: text
+    godname:
+        label: 顾客
+        type: text
+        sortable: false
+    csrname:
+        label: 客服
+        type: text
+        sortable: false
+    god_record_count:
+        label: 用户消息数
+        type: text
+        relation: god_record_count
+        useRelationCount: 'true'
+    csr_record_count:
+        label: 客服消息数
+        type: text
+        relation: csr_record_count
+        useRelationCount: 'true'
+    created_at:
+        label: 创建时间
+        type: datetime

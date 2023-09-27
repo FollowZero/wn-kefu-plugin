@@ -1,0 +1,12 @@
+title: KefuRecord
+modelClass: Summer\Kefu\Models\KefuRecordModel
+list: $/summer/kefu/models/kefurecordmodel/columns.yaml
+recordUrl: 'summer/kefu/kefurecord/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

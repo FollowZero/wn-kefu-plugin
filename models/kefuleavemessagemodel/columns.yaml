@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: ID
+        type: text
+        sortable: true
+    god:
+        label: 顾客
+        type: text
+        select: "nickname"
+        relation: god
+        sortable: false
+    name:
+        label: 姓名
+        type: text
+        sortable: false
+    contact:
+        label: 联系方式
+        type: text
+        sortable: false
+    message:
+        label: 留言内容
+        type: text
+        sortable: false
+    created_at:
+        label: 创建时间
+        type: datetime

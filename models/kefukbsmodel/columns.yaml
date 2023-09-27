@@ -1,0 +1,33 @@
+columns:
+    id:
+        label: ID
+        type: text
+    questions:
+        label: 知识点
+        type: text
+        searchable: true
+        sortable: false
+    match:
+        label: 自动回复匹配度
+        type: text
+        sortable: true
+    answer:
+        label: 回复内容
+        type: text
+        sortable: false
+    csrs:
+        label: 限定客服生效
+        relation: csrs
+        select: nickname
+    status:
+        label: 状态
+        type: partial
+        sortable: true
+        path: ~/plugins/summer/kefu/models/comments/_kbs_status.htm
+    weigh:
+        label: 权重
+        type: number
+        sortable: true
+    created_at:
+        label: 创建时间
+        type: datetime

@@ -1,0 +1,26 @@
+fields:
+    session_id:
+        label: 会话ID
+        span: auto
+        readOnly: 1
+        type: text
+    message_type:
+        label: 消息类型
+        showSearch: true
+        span: auto
+        type: dropdown
+        readOnly: 1
+    message:
+        label: 消息内容
+        size: small
+        span: full
+        type: textarea
+        readOnly: 1
+    status:
+        label: 状态
+        options:
+            - 未读
+            - 已读
+        span: auto
+        type: radio
+        readOnly: 1

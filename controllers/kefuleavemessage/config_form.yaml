@@ -1,0 +1,10 @@
+name: KefuLeaveMessage
+form: $/summer/kefu/models/kefuleavemessagemodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuLeaveMessageModel
+defaultRedirect: summer/kefu/kefuleavemessage
+create:
+    redirect: 'summer/kefu/kefuleavemessage/update/:id'
+    redirectClose: summer/kefu/kefuleavemessage
+update:
+    redirect: summer/kefu/kefuleavemessage
+    redirectClose: summer/kefu/kefuleavemessage

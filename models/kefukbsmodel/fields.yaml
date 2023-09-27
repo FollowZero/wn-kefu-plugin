@@ -1,0 +1,35 @@
+fields:
+    questions:
+        label: 知识点
+        size: small
+        span: full
+        type: textarea
+        comment: 一行一个问法，用户以任意一个问法达到匹配度，则自动回复
+    match:
+        label: 自动回复匹配度
+        span: full
+        type: text
+        default: 100
+        comment: '用户提问达到此匹配度,则自动回复'
+    answer:
+        label: 回复内容
+        size: small
+        span: full
+        type: textarea
+    csrs:
+        label: 限定客服生效
+        span: full
+        type: taglist
+        mode: relation
+        nameFrom: nickname
+    weigh:
+        label: 权重
+        span: auto
+        type: text
+        default: 0
+    status:
+        label: 状态
+        default: 0
+        span: auto
+        type: radio
+        comment: 万能知识：当所有知识点均无法匹配时，则自动回复万能知识

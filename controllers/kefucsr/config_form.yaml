@@ -1,0 +1,10 @@
+name: KefuCsr
+form: $/summer/kefu/models/kefucsrmodel/fields.yaml
+modelClass: Summer\Kefu\Models\KefuCsrModel
+defaultRedirect: summer/kefu/kefucsr
+create:
+    redirect: 'summer/kefu/kefucsr/update/:id'
+    redirectClose: summer/kefu/kefucsr
+update:
+    redirect: summer/kefu/kefucsr
+    redirectClose: summer/kefu/kefucsr
