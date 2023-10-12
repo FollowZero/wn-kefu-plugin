@@ -170,7 +170,7 @@ class Common
             }
             $new_msg=$query->first();
             if($new_msg){
-                $new_msg=$csr_info->target->first_name.":".self::formatMessage($new_msg);
+                $new_msg=$csr_info->nickname.":".self::formatMessage($new_msg);
                 break;
             }
         }

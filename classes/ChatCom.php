@@ -265,7 +265,7 @@ class ChatCom
             // 切换客服
             Db::beginTransaction();
             try {
-                $note = '客服代表已由 ' . $session->csr->target->first_name . ' 转为 ' . $csr_info->target->first_name;
+                $note = '客服代表已由 ' . $session->csr->nickname . ' 转为 ' . $csr_info->nickname;
                 // 记录轨迹
                 $trajectory_table=new KefuTrajectoryModel();
                 $trajectory_table->god_id=$god_info->id;
@@ -324,7 +324,7 @@ class ChatCom
                 $trajectory_table->god_id=$god_info->id;
                 $trajectory_table->csr_id=$csr_info->id;
                 $trajectory_table->log_type=2;
-                $trajectory_table->note='客服代表 ' . $csr_info->target->first_name;
+                $trajectory_table->note='客服代表 ' . $csr_info->nickname;
                 $trajectory_table->url='';
                 $trajectory_table->referrer='';
                 $trajectory_table->save();
@@ -361,7 +361,7 @@ class ChatCom
                 $q->with(['target']);
             }
         ])->where('god_id',$god_info->id)->first();
-        $session->nickname=$session->csr->target->first_name;
+        $session->nickname=$session->csr->nickname;
 
         return $session;
     }

@@ -23,7 +23,7 @@ class Welcome extends Controller
         $this->addJs('https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js');
         $this->addJs('https://cdn.staticfile.org/layer/2.3/layer.js');
         $this->addJs('/plugins/summer/kefu/assets/socket.io-client/socket.io.js');
-        $this->addJs('/plugins/summer/kefu/assets/js/kefus.js?v=5');
+        $this->addJs('/plugins/summer/kefu/assets/js/kefus.js?v=7');
 
         //通用逻辑
         $settings=Settings::instance();

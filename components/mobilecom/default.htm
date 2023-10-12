@@ -1,0 +1,84 @@
+<div class="kefu_container">
+    <header class="main_header">
+        <span id="header_title"></span>
+        <span id="csr_status" style="color: rgb(60, 118, 61);"></span>
+        <span id="kefu_error">链接中...</span>
+        <!-- <i class="fa fa-close fa-lg fa-fw back_page"></i> -->
+    </header>
+
+    <div class="content_wrapper">
+
+        <!-- 聊天消息列表 -->
+        <div class="chat_wrapper"></div>
+
+        <!--留言板-->
+        <div id="kefu_leave_message" style="display: none;" class="panel panel-success kefu_window_view">
+            <div class="panel-heading">非常抱歉，当前无客服在线，您留言后我们将尽快与您联系</div>
+            <div class="panel-body">
+                <form method="get" action="" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="c-name" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" id="c-name" placeholder="请输入您的姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-contact" class="col-sm-2 control-label">联系方式</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="contact" class="form-control" id="c-contact" placeholder="请输入手机/QQ/微信号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-message" class="col-sm-2 control-label">留言内容</label>
+                        <div class="col-sm-10">
+                            <textarea rows="5" name="message" class="form-control" id="c-message" placeholder="遇到的问题、所需服务、产品等，我们将尽快与您取得联系"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-success">确认留言</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 消息输入 -->
+        <div id="kefu_emoji"></div>
+
+        <!--客服输入状态-->
+        <div id="kefu_input_status"></div>
+
+        <div class="write">
+            <div class="widget_textarea">
+                <textarea id="kefu_message" spellcheck="false" style="height: 35px;"></textarea>
+            </div>
+            <div class="write_right">
+                <i class="smiley" title="发送表情" style="background: url('/plugins/summer/kefu/assets/img/expression.png') no-repeat center;background-size: 100% 100%;"></i>
+                <i class="more" style="background:url('/plugins/summer/kefu/assets/img/more.png') no-repeat center;background-size:100% 100%;"></i>
+                <button class="btn btn-success btn-sm send_btn">发送</button>
+            </div>
+        </div>
+        <div style="display: none;" class="footer_div">
+            <div class="toolbar">
+                <div class="toolbar_item select_file">
+                    <input id="chatfile" size="1" width="20" type="file" name="chatfile">
+                    <img src="/plugins/summer/kefu/assets/img/attachment.png" alt="发送文件" />
+                    <div>发送文件</div>
+                </div>
+
+            </div>
+        </div>
+        <div style="display: none;" class="select_model">
+            <div class="close_select_model">关闭</div>
+            <div class="card_list"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var settings = {{ settings|json_encode|raw }};
+</script>
+<script type="text/javascript">
+    console.log(settings);
+    KeFu.initialize(settings, 'index');
+</script>

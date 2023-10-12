@@ -113,7 +113,7 @@ var KeFu = {
             if (msg.data.modulename == 'admin') {
 
                 KeFu.change_csr_status(msg.data.csr_info.status);
-                $('#modal-title').html(msg.data.chat_name + '-' + msg.data.csr_info.target.first_name);
+                $('#modal-title').html(msg.data.chat_name + '-' + msg.data.csr_info.nickname);
 
                 // 渲染聊天列表
                 if (msg.data.session.dialogue && msg.data.session.dialogue.length) {
@@ -731,7 +731,12 @@ var KeFu = {
 
             if (!KeFu.isPc() && KeFu.config.modulename != 'admin') {
                 // 跳转到手机单页
-                window.location.href = KeFu.buildUrl(KeFu.url, KeFu.config.modulename, 'mobile');
+                window.location.href = KeFu.config.wapurl;
+                return;
+            }
+            if (KeFu.isPc() && KeFu.config.modulename == 'button') {
+                // 跳转到手机单页
+                window.location.href = KeFu.config.weburl;
                 return;
             }
 
@@ -1067,9 +1072,9 @@ var KeFu = {
     sendMessage: function (message, message_type,message_path='') {
 
         // 检查 websocket 是否连接
-        if (!KeFu.ws.SocketTask || KeFu.ws.SocketTask.readyState != 1) {
-            ///layer.msg('网络链接异常，请刷新重试~');
-            ///return;
+        if (!KeFu.ws.SocketTask) {
+            layer.msg('网络链接异常，请刷新重试~');
+            return;
         }
 
         if (typeof KeFu.session_id == 'string' && KeFu.session_id.indexOf('invitation') !== -1) {
@@ -1078,8 +1083,8 @@ var KeFu = {
         }
 
         if (!KeFu.session_id) {
-            ///layer.msg('请选择一个会话~');
-            ///return;
+            layer.msg('请选择一个会话~');
+            return;
         }
 
         var message_id = new Date().getTime() + KeFu.session_id + Math.floor(Math.random() * 10000);

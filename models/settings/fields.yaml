@@ -152,3 +152,15 @@ tabs:
             type: fileupload
             comment: 建议大小100kb
             tab: 运行配置
+        wapurl:
+            label: 手机版会话页面
+            span: full
+            comment: './kefuwap'
+            type: text
+            tab: 运行配置
+        weburl:
+            label: 会话页面
+            span: full
+            comment: './kefuweb'
+            type: text
+            tab: 运行配置

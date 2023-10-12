@@ -1,6 +1,7 @@
 <?php namespace Summer\Kefu\Console;
 
 use Illuminate\Console\Command;
+use Summer\Kefu\Models\Settings;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Workerman\Worker;
@@ -28,7 +29,7 @@ class KefuCommand extends Command
      */
     public function handle()
     {
-        $port='39701';
+        $port=Settings::get('port','39701');
         // 创建socket.io服务端，监听3120端口
         $io = new SocketIO($port);
 

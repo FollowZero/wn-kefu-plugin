@@ -189,7 +189,7 @@ class ChatAdmin extends ChatCom
         // 向所有人发送上线消息
         $return_data=[];
         $return_data['user_id']=$csr_info->id;
-        $return_data['user_name']=$csr_info->target->first_name;
+        $return_data['user_name']=$csr_info->nickname;
         $return_data['tourists']='not';
         $return_data['modulename']='admin';
         $this->io->emit('online', $return_data);
@@ -493,7 +493,7 @@ class ChatAdmin extends ChatCom
                 $trajectory_table->god_id=$god_info->id;
                 $trajectory_table->csr_id=$this->csr_info->id;
                 $trajectory_table->log_type=1;
-                $trajectory_table->note=$this->csr_info->target->first_name." 邀请对话";
+                $trajectory_table->note=$this->csr_info->nickname." 邀请对话";
                 $trajectory_table->save();
                 // 顾客收到邀请
                 $return_data=[];

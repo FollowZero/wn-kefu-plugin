@@ -22,7 +22,7 @@ use Cms\Classes\ComponentBase;
 use Summer\Kefu\Classes\Common;
 use Summer\Kefu\Models\KefuTrajectoryModel;
 
-class kefuCom extends ComponentBase
+class ButtonCom extends ComponentBase
 {
 
     protected $ioaddress;
@@ -36,8 +36,8 @@ class kefuCom extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => '弹窗客服',
-            'description' => '弹窗客服'
+            'name' => '悬浮按钮',
+            'description' => '单独的悬浮按钮'
         ];
     }
     public function defineProperties()
@@ -85,7 +85,7 @@ class kefuCom extends ComponentBase
         $port=$settings->port>0?$settings->port:'39701';
         $iourl=$host.":".$port;
 
-        $settings->modulename='index';
+        $settings->modulename='button';
         $settings->iourl=$iourl;
         //自动邀请配置
         if($settings->invite_box_img){

@@ -10,6 +10,8 @@ class Plugin extends PluginBase
     {
         return [
             'Summer\Kefu\Components\KefuCom' => 'summer_kefu_kefucom',
+            'Summer\Kefu\Components\ButtonCom' => 'summer_kefu_buttoncom',
+            'Summer\Kefu\Components\MobileCom' => 'summer_kefu_mobilecom',
         ];
     }
 

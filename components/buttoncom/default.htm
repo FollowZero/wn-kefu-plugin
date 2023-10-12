@@ -1,0 +1,15 @@
+<!-- KeFu-Template -->
+<ins class="KeFu">
+
+    <!-- 右侧悬浮按钮 -->
+    <img src="/plugins/summer/kefu/assets/img/buoy1.png" class="kefu_button" id="kefu_button" data-html="true" data-container="body" data-toggle="popover" data-placement="left" data-content="" alt="客服浮标" />
+    <!-- 右侧悬浮按钮-end -->
+</ins>
+<!-- KeFu-Template-end -->
+<script>
+    var settings = {{ settings|json_encode|raw }};
+</script>
+<script type="text/javascript">
+    console.log(settings);
+    KeFu.initialize(settings, 'button');
+</script>

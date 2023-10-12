@@ -22,7 +22,7 @@ use Cms\Classes\ComponentBase;
 use Summer\Kefu\Classes\Common;
 use Summer\Kefu\Models\KefuTrajectoryModel;
 
-class kefuCom extends ComponentBase
+class MobileCom extends ComponentBase
 {
 
     protected $ioaddress;
@@ -36,8 +36,8 @@ class kefuCom extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name' => '弹窗客服',
-            'description' => '弹窗客服'
+            'name' => '弹窗客服-手机端',
+            'description' => '弹窗客服-手机端 '
         ];
     }
     public function defineProperties()
@@ -147,12 +147,13 @@ class kefuCom extends ComponentBase
         try {
             $this->setData();
             $this->addCss('https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
-            $this->addCss('/plugins/summer/kefu/assets/css/kefu_default.css');
+            $this->addCss('https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css');
+            $this->addCss('/plugins/summer/kefu/assets/css/kefu_mobile.css');
             $this->addJs('https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js');
             $this->addJs('https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js');
             $this->addJs('https://cdn.staticfile.org/layer/2.3/layer.js');
             $this->addJs('/plugins/summer/kefu/assets/socket.io-client/socket.io.js');
-            $this->addJs('/plugins/summer/kefu/assets/js/kefus.js?v=7');
+            $this->addJs('/plugins/summer/kefu/assets/js/kefu_mobiles.js?v=1');
         } catch (ApplicationException $e) {
             echo $e->getMessage();
             return $this->controller->run('404');

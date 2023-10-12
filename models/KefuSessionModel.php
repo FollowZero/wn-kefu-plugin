@@ -44,7 +44,7 @@ class KefuSessionModel extends Model
 
     public function getCsrnameAttribute()
     {
-        return $this->csr->target->first_name??'';
+        return $this->csr->nickname??'';
     }
     public function getGodnameAttribute()
     {
